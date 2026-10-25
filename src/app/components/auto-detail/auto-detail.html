@@ -1,0 +1,22 @@
+<div class="detail">
+    <button class="back" (click)="back()">← Retour à la liste</button>
+
+    <div class="detail-content">
+        <div class="detail-image">
+            <img [src]="`images/${auto.photo}`" [alt]="auto.brand + ' ' + auto.model">
+        </div>
+
+        <div class="detail-info">
+            <p class="brand">{{auto.brand}}</p>
+            <h2>{{auto.model}}</h2>
+            <p class="description">{{auto.description}}</p>
+
+            <ul class="specs">
+                <li>Puissance <strong>{{auto.power}}</strong></li>
+                <li>Stock <strong>{{auto.availability}} unités</strong></li>
+            </ul>
+
+            <p class="price">{{auto.price}} DNT</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+.detail {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 30px 50px;
+    animation: apparition 0.5s ease;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.back {
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1e2230;
+    background-color: white;
+    border: 2px solid #e3e5ea;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.back:hover {
+    background-color: #1e2230;
+    color: white;
+    border-color: #1e2230;
+}
+
+.detail-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    margin-top: 25px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(30, 34, 48, 0.12);
+    overflow: hidden;
+}
+
+.detail-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    padding: 40px;
+    background: linear-gradient(135deg, #eef0f4, #dfe3ea);
+}
+
+img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 40px 40px 0;
+}
+
+.brand {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c9a24b;
+}
+
+h2 {
+    margin: 5px 0 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+.description {
+    margin: 0 0 25px;
+    line-height: 1.8;
+    color: #6b7280;
+}
+
+.specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.specs li {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    color: #6b7280;
+    background-color: #f4f5f7;
+    border-radius: 12px;
+}
+
+.specs strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 1.2rem;
+    color: #1e2230;
+}
+
+.price {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #c9a24b;
+}
+
+@media (max-width: 800px) {
+    .detail {
+        padding: 0 15px 40px;
+    }
+    .detail-content {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .detail-image {
+        min-height: 260px;
+        padding: 25px;
+    }
+    .detail-info {
+        padding: 25px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+}

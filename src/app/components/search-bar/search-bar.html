@@ -1,0 +1,38 @@
+<div class="container">
+    <input type="text" #brand placeholder="Rechercher une marque ou un modèle..."
+    (input)="selectAutos(brand.value)">
+    <fa-icon [icon]="faMagnifyingGlass" />
+</div>
+
+       <div class="cars-container">
+    @for(auto of selectedAutos; track auto.id){
+       <div class="auto-card">
+        <div class="image">
+            <img [src]="`images/${auto.photo}`" [alt]="auto.brand + ' ' + auto.model">
+             <span class="badge"
+          [class.success]="auto.availability > 3"
+          [class.warning]="auto.availability > 0 && auto.availability <= 3"
+          [class.danger]="auto.availability === 0">
+        @if (auto.availability > 3) {
+            En stock
+        } @else if (auto.availability > 0) {
+            Dernières unités
+        } @else {
+            Rupture
+        }
+    </span>
+        </div>
+        <div class="details">
+            <h3>{{auto.brand}} {{auto.model}}</h3>
+            <p class="specs">
+                Power : {{auto.power}}<br>
+                Only {{auto.availability}} units in stock
+            </p>
+            <p class="price">{{auto.price}} DNT</p>
+        </div>
+        <div class="see_more">
+            <button (click)="selectCar(auto)">See more..</button>
+        </div>
+       </div>
+    }
+</div>
